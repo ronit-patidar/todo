@@ -5,37 +5,35 @@
 }
 
 body {
-  font-family: sans-serif;
-  background-color: #f3f4f6;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f3fb;
   min-height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: flex-start;
-  padding: 2rem;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
 
 .todo-app {
-  max-width: 420px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 1.5rem;
   background: #ffffff;
-  border: 1px solid #e5e7eb;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  border: 1px solid #e8e7f5;
+  padding: 1.75rem;
+  width: 100%;
+  max-width: 480px;
+  margin-top: 2rem;
 }
 
 .todo-app h4 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
-  color: #111827;
+  color: #1a1a2e;
   margin-bottom: 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  letter-spacing: -0.3px;
 }
 
-/* Input row */
+/* ---------- input row ---------- */
+
 .input-row {
   display: flex;
   gap: 8px;
@@ -44,66 +42,57 @@ body {
 
 .input-row input {
   flex: 1;
-  padding: 9px 12px;
-  font-size: 14px;
-  border: 1.5px solid #d1d5db;
+  height: 36px;
+  padding: 0 12px;
   border-radius: 8px;
-  background: #f9fafb;
-  color: #111827;
+  border: 1px solid #d0cef0;
+  background: #f9f8ff;
+  color: #1a1a2e;
+  font-size: 14px;
   outline: none;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  transition: border-color 0.15s, box-shadow 0.15s;
 }
 
 .input-row input:focus {
-  border-color: #7c3aed;
-  background: #fff;
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+  border-color: #534AB7;
+  box-shadow: 0 0 0 3px #EEEDFE;
 }
 
-.input-row input::placeholder {
-  color: #9ca3af;
-}
-
-/* Add button */
 .add-btn {
-  padding: 9px 16px;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 8px;
-  border: none;
-  background: #7c3aed;
+  height: 36px;
+  padding: 0 14px;
+  background: #534AB7;
   color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
   cursor: pointer;
   transition: background 0.15s, transform 0.1s;
-  white-space: nowrap;
 }
 
-.add-btn:hover {
-  background: #6d28d9;
-}
+.add-btn:hover { background: #3C3489; }
+.add-btn:active { transform: scale(0.97); }
 
-.add-btn:active {
-  transform: scale(0.97);
-}
+/* ---------- divider & label ---------- */
 
-/* Divider */
 .divider {
   border: none;
-  border-top: 1px solid #f3f4f6;
-  margin: 0.5rem 0 1rem;
+  border-top: 1px solid #eeecfc;
+  margin: 0 0 1rem;
 }
 
-/* Section label */
 .section-label {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 600;
-  color: #6b7280;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  color: #9e9cbd;
   margin-bottom: 0.75rem;
 }
 
-/* Task list */
+/* ---------- task list ---------- */
+
 .task-list {
   list-style: none;
   display: flex;
@@ -111,57 +100,95 @@ body {
   gap: 6px;
 }
 
-/* Task item */
 .task-item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
   padding: 10px 12px;
+  background: #f9f8ff;
   border-radius: 8px;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  font-size: 14px;
-  color: #111827;
-  transition: border-color 0.15s, background 0.15s;
+  border: 1px solid #e8e7f5;
+  transition: border-color 0.15s;
 }
 
-.task-item:hover {
-  border-color: #c4b5fd;
-  background: #faf5ff;
-}
+.task-item:hover { border-color: #c4c1e8; }
 
-/* Dot indicator */
 .task-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: #7c3aed;
+  background: #534AB7;
   flex-shrink: 0;
-  margin-right: 10px;
+  transition: background 0.2s;
 }
 
-/* Delete button */
-.delete-btn {
-  background: none;
-  border: none;
+/* dim dot when task is done */
+.task-item:has(.done) .task-dot {
+  background: #c4c1e8;
+}
+
+.task-item span:not(.task-dot) {
+  flex: 1;
+  font-size: 14px;
+  color: #1a1a2e;
+  transition: color 0.2s;
+}
+
+/* ---------- done state ---------- */
+
+.done {
+  text-decoration: line-through;
+  color: #a09dbe !important;
+}
+
+/* ---------- buttons ---------- */
+
+.delete-btn,
+.done-btn {
+  height: 28px;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 8px;
   cursor: pointer;
-  color: #d1d5db;
-  font-size: 16px;
-  line-height: 1;
-  padding: 2px 6px;
-  border-radius: 6px;
-  transition: color 0.15s, background 0.15s;
+  border: 1px solid;
+  transition: background 0.15s, transform 0.1s;
+  flex-shrink: 0;
 }
 
-.delete-btn:hover {
-  color: #ef4444;
-  background: #fef2f2;
+.delete-btn {
+  background: transparent;
+  border-color: #f09595;
+  color: #a32d2d;
 }
+.delete-btn:hover  { background: #fcebeb; }
+.delete-btn:active { transform: scale(0.97); }
 
-/* Empty state */
-.empty-state {
+.done-btn {
+  background: transparent;
+  border-color: #5dcaa5;
+  color: #0f6e56;
+}
+.done-btn:hover  { background: #e1f5ee; }
+.done-btn:active { transform: scale(0.97); }
+
+/* ---------- mark all button ---------- */
+
+.mark-all-btn {
+  margin-top: 1rem;
+  width: 100%;
+  height: 36px;
+  background: transparent;
+  border: 1px solid #d0cef0;
+  border-radius: 8px;
+  color: #6b68a0;
   font-size: 13px;
-  color: #9ca3af;
-  text-align: center;
-  padding: 1.5rem 0;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.mark-all-btn:hover {
+  background: #f4f3fb;
+  color: #1a1a2e;
 }
