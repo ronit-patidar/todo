@@ -1,16 +1,76 @@
-# React + Vite
+# Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and responsive Todo application built with React. This app allows users to manage their daily tasks efficiently.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* Add new tasks
+* Delete tasks
+* Mark tasks as completed
+* Convert all tasks to uppercase
+* Responsive and user-friendly interface
 
-## React Compiler
+## Technologies Used
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* JavaScript (ES6+)
+* CSS
+* UUID
 
-## Expanding the ESLint configuration
+## Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clone the repository:
+
+```bash
+git clone <repository-url>
+```
+
+2. Navigate to the project directory:
+
+```bash
+cd todo-app
+```
+
+3. Install dependencies:
+
+```bash
+npm install
+```
+
+4. Start the development server:
+
+```bash
+npm run dev
+```
+
+## Project Structure
+
+```text
+src/
+├── TodoList.jsx
+├── TodoList.css
+├── App.jsx
+└── main.jsx
+```
+
+## Usage
+
+* Enter a task in the input field.
+* Click **Add Task** to add it to the list.
+* Use the available buttons to update or delete tasks.
+* Manage your daily activities efficiently.
+
+## Future Enhancements
+
+* Edit existing tasks
+* Save tasks using Local Storage
+* Add task categories
+* Add due dates and reminders
+
+## Author
+
+Ronit Patidar
+
+## License
+
+This project is open source and available under the MIT License.
