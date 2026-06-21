@@ -3,7 +3,9 @@
 A simple and responsive Todo application built with React. This app allows users to manage their daily tasks efficiently.
 
 ## Demo
->[Link](https://lottery-game-eosin-eight.vercel.app/)
+
+> [Link](https://todo-umber-one.vercel.app/)
+
 ## Features
 
 * Add new tasks
@@ -22,25 +24,21 @@ A simple and responsive Todo application built with React. This app allows users
 ## Installation
 
 1. Clone the repository:
-
 ```bash
-git clone <[repository](https://github.com/ronit-patidar/todo/)>
+git clone https://github.com/ronit-patidar/todo/
 ```
 
 2. Navigate to the project directory:
-
 ```bash
 cd todo-app
 ```
 
 3. Install dependencies:
-
 ```bash
 npm install
 ```
 
 4. Start the development server:
-
 ```bash
 npm run dev
 ```
