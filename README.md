@@ -2,6 +2,8 @@
 
 A simple and responsive Todo application built with React. This app allows users to manage their daily tasks efficiently.
 
+#Demo
+>[Link](https://lottery-game-eosin-eight.vercel.app/)
 ## Features
 
 * Add new tasks
@@ -70,7 +72,3 @@ src/
 ## Author
 
 Ronit Patidar
-
-## License
-
-This project is open source and available under the MIT License.
